@@ -46,13 +46,13 @@ namespace StringVerification
             return false;
         }
 
-        public static bool CheckSumISBN(int[] numbers)
+        /// <summary>
+        /// Checks math valid isbn.
+        /// </summary>
+        /// <param name="numbers">Source numbers.</param>
+        /// <returns>true if number is a math valid ISBN-10 identification number of book, false otherwise.</returns>
+        private static bool CheckSumISBN(int[] numbers)
         {
-            if (numbers is null)
-            {
-                throw new ArgumentException("numbers is null.", nameof(numbers));
-            }
-
             if (((numbers[0] * 10) + (numbers[1] * 9) + (numbers[2] * 8) + (numbers[3] * 7) + (numbers[4] * 6)
                 + (numbers[5] * 5) + (numbers[6] * 4) + (numbers[7] * 3) + (numbers[8] * 2) + (numbers[9] * 1)) % 11 == 0)
             {
